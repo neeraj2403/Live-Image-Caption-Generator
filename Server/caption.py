@@ -12,7 +12,7 @@ warnings.filterwarnings("ignore")
 
 
 
-model = load_model("./model_weights/model_9.h5")
+model = load_model("Server\model_weights\model_9.h5")
 model.make_predict_function()
 
 model_temp = ResNet50(weights="imagenet", input_shape=(224,224,3))
@@ -25,10 +25,10 @@ model_resnet.make_predict_function()
     
 # Load the word_to_idx and idx_to_word from disk
 
-with open("./storage/word_to_idx.pkl", "rb") as w2i:
+with open("Server\storage\word_to_idx.pkl", "rb") as w2i:
     word_to_idx = pickle.load(w2i)
 
-with open("./storage/idx_to_word.pkl", "rb") as i2w:
+with open("Server\storage\idx_to_word.pkl", "rb") as i2w:
     idx_to_word = pickle.load(i2w)
     
 
