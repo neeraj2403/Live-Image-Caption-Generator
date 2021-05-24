@@ -6,8 +6,8 @@ warnings.filterwarnings("ignore")
 
 
 
-application = Flask(__name__)
-@application.route('/', methods = ['POST','GET'])
+app = Flask(__name__)
+@app.route('/', methods = ['POST','GET'])
 
 def hello_world():
 	if request.method == 'POST':
@@ -24,7 +24,7 @@ def hello_world():
 		return jsonify({'description' : caption})
 	
 if __name__ == '__main__':
-	application.run(debug = True)
+	app.run(debug = True)
 
 
 
