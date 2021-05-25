@@ -17,7 +17,7 @@ path1 = os.path.relpath(path1)
 path2 = "storage/word_to_idx.pkl"
 path2 = os.path.relpath(path2)
 
-path3 = "storage\idx_to_word.pkl"
+path3 = "storage/idx_to_word.pkl"
 path3 = os.path.relpath(path3)
 
 
@@ -92,4 +92,3 @@ def caption_this_image(input_img):
     caption = predict_caption(photo)
     # keras.backend.clear_session()
     return caption
-    
