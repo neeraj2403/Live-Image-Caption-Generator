@@ -22,7 +22,10 @@ def hello_world():
 		
 		caption = caption_this_image(filename)
 		return jsonify({'description' : caption})
-	
+	elif request.method == 'GET':
+		return jsonify({'message':'sucess'})
+
+
 if __name__ == '__main__':
 	app.run(debug = True)
 
