@@ -6,13 +6,22 @@ from keras.models import load_model, Model
 import matplotlib.pyplot as plt
 import pickle
 import numpy as np
-
+import os
 import warnings
 warnings.filterwarnings("ignore")
 
 
+path1 = "model_weights/model_9.h5"
+path1 = os.path.relpath(path1)
 
-model = load_model("model_weights\model_9.h5")
+path2 = "storage/word_to_idx.pkl"
+path2 = os.path.relpath(path2)
+
+path3 = "storage\idx_to_word.pkl"
+path3 = os.path.relpath(path3)
+
+
+model = load_model(path1)
 model.make_predict_function()
 
 model_temp = ResNet50(weights="imagenet", input_shape=(224,224,3))
@@ -25,10 +34,10 @@ model_resnet.make_predict_function()
     
 # Load the word_to_idx and idx_to_word from disk
 
-with open("storage\word_to_idx.pkl", "rb") as w2i:
+with open(path2, "rb") as w2i:
     word_to_idx = pickle.load(w2i)
 
-with open("storage\idx_to_word.pkl", "rb") as i2w:
+with open(path3, "rb") as i2w:
     idx_to_word = pickle.load(i2w)
     
 
@@ -83,3 +92,4 @@ def caption_this_image(input_img):
     caption = predict_caption(photo)
     # keras.backend.clear_session()
     return caption
+    
