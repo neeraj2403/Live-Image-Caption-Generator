@@ -15,10 +15,10 @@ def hello_world():
 		image_data = data['image']
 		imgdata = base64.b64decode(image_data)
 		
-		filename = 'static/something.jpg'
-		with open(filename, 'wb') as f:
-			f.write(imgdata)
-			print("abc")
+		# filename = 'static/something.jpg'
+		# with open(filename, 'wb') as f:
+		# 	f.write(imgdata)
+		# 	print("abc")
 		
 		# caption = caption_this_image(filename)
 		return jsonify({'description' : "abcddd"})
