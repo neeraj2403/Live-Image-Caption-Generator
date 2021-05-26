@@ -3,7 +3,7 @@ from caption import *
 import warnings
 import base64
 warnings.filterwarnings("ignore")
-
+import os
 
 
 app = Flask(__name__)
@@ -14,8 +14,10 @@ def hello_world():
 		data = request.get_json(force=True)
 		image_data = data['image']
 		imgdata = base64.b64decode(image_data)
+	
 		
 		filename = 'static/something.jpg'
+		filename = os.path.relpath(filename)
 		with open(filename, 'wb') as f:
 			f.write(imgdata)
 			print("abc")
