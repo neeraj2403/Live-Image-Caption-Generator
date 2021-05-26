@@ -16,7 +16,7 @@ def hello_world():
 		imgdata = base64.b64decode(image_data)
 	
 		
-		filename = 'static/something.jpg'
+		filename = 'something.jpg'
 		filename = os.path.relpath(filename)
 		with open(filename, 'wb') as f:
 			f.write(imgdata)
