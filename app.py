@@ -22,8 +22,8 @@ def hello_world():
 			f.write(imgdata)
 			print("abc")
 		
-		# caption = caption_this_image(filename)
-		return jsonify({'description' : 'post'})
+		caption = caption_this_image(filename)
+		return jsonify({'description' : caption})
 	elif request.method == 'GET':
 		return jsonify({'message':'sucess'})
 
