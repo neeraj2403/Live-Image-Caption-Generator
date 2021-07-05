@@ -4,7 +4,7 @@ import warnings
 import base64
 warnings.filterwarnings("ignore")
 import os
-
+import time
 
 app = Flask(__name__)
 @app.route('/', methods = ['POST','GET'])
@@ -21,8 +21,9 @@ def hello_world():
 		with open(filename, 'wb') as f:
 			f.write(imgdata)
 			print("abc")
-		
 		caption = caption_this_image(filename)
+		time.sleep(5)
+
 		return jsonify({'description' : caption})
 	elif request.method == 'GET':
 		return jsonify({'message':'sucess'})
