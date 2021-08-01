@@ -22,7 +22,7 @@ def hello_world():
 			f.write(imgdata)
 			print("abc")
 		caption = caption_this_image(filename)
-		time.sleep(5)
+		# time.sleep(5)
 
 		return jsonify({'description' : caption})
 	elif request.method == 'GET':
